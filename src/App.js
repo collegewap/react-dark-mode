@@ -1,12 +1,16 @@
 import React from "react";
 import "./App.css";
+import useDarkMode from "./hooks/useDarkMode";
 
 function App() {
+  const [isDarkMode, setDarkMode] = useDarkMode();
   return (
     <div className="App">
       <nav className="navigation">
         <div className="logo">Dark Mode</div>
-        <button className="toggle_btn">Toggle</button>
+        <button className="toggle_btn" onClick={() => setDarkMode(!isDarkMode)}>
+          Toggle
+        </button>
       </nav>
       <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
       <p>
