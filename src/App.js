@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import useDarkMode from "./hooks/useDarkMode";
+import { BsMoon, BsSun } from "react-icons/bs";
 
 function App() {
   const [isDarkMode, setDarkMode] = useDarkMode();
@@ -9,7 +10,11 @@ function App() {
       <nav className="navigation">
         <div className="logo">Dark Mode</div>
         <button className="toggle_btn" onClick={() => setDarkMode(!isDarkMode)}>
-          Toggle
+          {isDarkMode ? (
+            <BsSun color="#ff0" size="24" title="Switch to light mode" />
+          ) : (
+            <BsMoon size="24" title="Switch to dark mode" />
+          )}
         </button>
       </nav>
       <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
